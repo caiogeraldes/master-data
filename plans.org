@@ -1,0 +1,55 @@
+#+TITLE: Plans: final stretch of dissertation
+#+AUTHOR: Caio Borges Aguida Geraldes
+
+* Evaluating the effects of pressuposition on the case attraction.
+
+In the next and last phase of this master, we are trying to understand if effects of related to pressuposition (anaphora etc) are related to the distribution of case attraction positively.
+
+In this case, we have the system of hypotheses:
+#+begin_quote
+H1: For a given sentence with the structure (α),
+    (α) [ V1 Xobl Yobl V2 ]
+   if Yobl is pragmatically anaphoric, contrafactual or presents any other pressupositional value, the attraction is more likely to occur.
+H0: For a given sentence with the structure (α), the attraction is neither more likely nor unlikely if Yobl is pragmatically anaphoric, contrafactual or presents any other pressupositional value.
+#+end_quote
+
+To verify such, we have to evaluate and annotate the sentences in [[file:data.csv][data.csv]].
+This annotation has been done using the available critical editions and most of our commentaries are available in this [[file:~/Documentos/Mestrado/Notebooks/hdt.md][markdown file.]]
+
+The evaluation of the effect should account for a χ² value, its *p-value* and an coeficient of effect.
+This should be archieved by the following R script:
+
+#+BEGIN_SRC R
+require(tidyverse)
+require(vcd)
+
+# Loading the data
+data <- read_csv("data.csv")
+
+# Generating a table
+tab.pressup <- table(data$pressuposition, data$attraction); tab.pressup
+
+# Generating the stats
+assocstats(tab.pressup)
+
+# Generating the plot
+plot <- ggplot(data, aes(attraction, fill=attraction)) +
+    geom_bar() +
+    facet_wrap(~pressuposition)
+#+END_SRC
+
+
+** TODO Finish the annotation of the *pressuposition* column.
+SCHEDULED: <2020-07-10 sex>
+** TODO Process the newly annotated data and compare it to the rest.
+SCHEDULED: <2020-07-15 qua>
+** TODO Present a short rationale on why this matters.
+SCHEDULED: <2020-07-22 qua>
+
+
+* Supplementary information:
+
+Include the data for textual variation in critical editions.
+
+** TODO Finish the annotation of the *var* column.
+SCHEDULED: <2020-07-13 seg>
