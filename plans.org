@@ -8,8 +8,11 @@ In the next and last phase of this master, we are trying to understand if effect
 In this case, we have the system of hypotheses:
 #+begin_quote
 H1: For a given sentence with the structure (α),
+
     (α) [ V1 Xobl Yobl V2 ]
+
    if Yobl is pragmatically anaphoric, contrafactual or presents any other pressupositional value, the attraction is more likely to occur.
+
 H0: For a given sentence with the structure (α), the attraction is neither more likely nor unlikely if Yobl is pragmatically anaphoric, contrafactual or presents any other pressupositional value.
 #+end_quote
 
