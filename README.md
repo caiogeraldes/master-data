@@ -1,10 +1,12 @@
----
-author: Caio Borges Aguida Geraldes
-title: Data on AG Case Attraction in Infinitive Clauses (Herodotus, Plato, Xenophon)
----
+<!-- --- -->
+<!-- author: Caio Borges Aguida Geraldes -->
+<!-- title: Data on AG Case Attraction in Infinitive Clauses (Herodotus, Plato, Xenophon) -->
+<!-- --- -->
 
 # Data on AG Case Attraction in Infinitive Clauses (Herodotus, Plato, Xenophon)
+author: Caio Borges Aguida Geraldes
+email: <caio.geraldes@usp.br> 
 
-Data of my MS Dissertation.
+These files comprehend the annotated data used in my MS dissertation *Atração de Caso em Orações Infinitivas do Grego Antigo: estudo de caso em Heródoto, Platão e Xenofonte.*
 
 The data is stored in the 
