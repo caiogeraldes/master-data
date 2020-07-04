@@ -41,13 +41,14 @@ plot <- ggplot(data, aes(attraction, fill=attraction)) +
     facet_wrap(~pressuposition)
 #+END_SRC
 
+** Rationale
+*** TODO Present a short rationale on why this matters.
+SCHEDULED: <2020-07-22 qua>
 
 ** TODO Finish the annotation of the *pressuposition* column.
 SCHEDULED: <2020-07-10 sex>
 ** TODO Process the newly annotated data and compare it to the rest.
 SCHEDULED: <2020-07-15 qua>
-** TODO Present a short rationale on why this matters.
-SCHEDULED: <2020-07-22 qua>
 
 
 * Supplementary information:
