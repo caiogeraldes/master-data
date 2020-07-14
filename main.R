@@ -140,6 +140,7 @@ mca <- MCA(data[,c("attraction",
                    "copula",
                    "poss_verb",
                    "personal",
+                   "pressuposition",
                    "author")],
            method = "Burt", graph = F)
 
@@ -154,14 +155,15 @@ ggsave("mca.eigenvalues.png", path = "./plots/",
 
                                         # Dim1 and Dim2
 
-b <- plot(mca, invisible = "ind", graph.type =  "ggplot",
+mca.plot <- plot(mca, invisible = "ind", graph.type =  "ggplot",
           col.var=c('#1B9E77', '#1B9E77',
                     '#D95F02', '#D95F02',
                     '#7570B3', '#7570B3',
                     '#E7298A', '#E7298A',
+                    '#E6AB02', '#E6AB02',
                     '#66A61E', '#66A61E', '#66A61E')) +
   theme_get()
-b
+mca.plot
 
 ggsave("mca.dim1dim2.png", path = "./plots/", dpi = 1200)
 
