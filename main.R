@@ -51,7 +51,7 @@ b <- p + labs(title = "Frequency count of Case Attraction")
 b
 
 ggsave("freq.attr.png", path = "./plots/",
-       height = 10, width = 10, units = "cm", dpi = 1200)
+       height = 5, width = 8, units = "cm", dpi = 1200)
 
 
 ## Attraction and Distance
