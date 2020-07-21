@@ -58,14 +58,16 @@ ggsave("freq.attr.png", path = "./plots/",
                                         # Distance and the normal distribution
 b <- ggplot(data, aes(distance_xy)) +
   geom_histogram(bins = 30, aes(fill=attraction)) +
+  theme(text = element_text(size = 12)) +
   scale_fill_brewer(palette = "Dark2") +
   labs(x = "Distance between Xobl and Y", y = "Frequency counts",
        fill = "Attraction",
-       title = "Histogram of the distances between Xobl and Y")
+       title = "Distances between Xobl and Y")
 b
 
 ggsave("hist.dist.png", path = "./plots/",
-       height = 10, width = 10, units = "cm", dpi = 1200)
+       height = 10, width = 10, units = "cm", dpi = "retina",
+       device = "png")
 
 ## Clearly the plot shows that the distance between Xobl and Y is
 ## skewed to the leftmost side, with a steep distance between
