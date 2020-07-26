@@ -50,8 +50,8 @@ p <- ggplot(data, aes(attraction)) +
 b <- p + labs(title = "Frequency count of Case Attraction")
 b
 
-ggsave("freq.attr.png", path = "./plots/",
-       height = 5, width = 8, units = "cm", dpi = 1200)
+# ggsave("freq.attr.png", path = "./plots/",
+       # height = 5, width = 8, units = "cm", dpi = 1200)
 
 
 ## Attraction and Distance
@@ -65,9 +65,9 @@ b <- ggplot(data, aes(distance_xy)) +
        title = "Distances between Xobl and Y")
 b
 
-ggsave("hist.dist.png", path = "./plots/",
-       height = 10, width = 10, units = "cm", dpi = "retina",
-       device = "png")
+# ggsave("hist.dist.png", path = "./plots/",
+       # height = 10, width = 10, units = "cm", dpi = "retina",
+       # device = "png")
 
 ## Clearly the plot shows that the distance between Xobl and Y is
 ## skewed to the leftmost side, with a steep distance between
@@ -113,8 +113,8 @@ b <- ggplot(data, aes(attraction, distance_xy, fill=attraction)) +
   scale_fill_brewer(palette="Dark2")
 b
 
-ggsave("box.dist.attr.png", path = "./plots/",
-       height = 10, width = 10, units = "cm", dpi = 1200)
+# ggsave("box.dist.attr.png", path = "./plots/",
+       # height = 10, width = 10, units = "cm", dpi = 1200)
 
 ## Copula and Attraction
                                         # Stats
@@ -131,8 +131,8 @@ b <- p + facet_wrap(.~copula, labeller = as_labeller(lables)) +
     labs(title="Case Attraction and Copular Infinitives")
 b
 
-ggsave("copula.attr.png", path = "./plots/",
-       height = 10, width = 10, units = "cm", dpi = 1200)
+# ggsave("copula.attr.png", path = "./plots/",
+       # height = 10, width = 10, units = "cm", dpi = 1200)
 
 
 ## Multivariate models
@@ -152,8 +152,8 @@ fviz_screeplot(mca, addlabels = TRUE, ylim = c(0, 80),
                barfill="#1B9E77", barcolor="#1B9E77", main="Eigenvalues") +
   theme_get()
 
-ggsave("mca.eigenvalues.png", path = "./plots/",
-       height = 10, width = 10, units = "cm", dpi = 1200)
+# ggsave("mca.eigenvalues.png", path = "./plots/",
+       # height = 10, width = 10, units = "cm", dpi = 1200)
 
                                         # Dim1 and Dim2
 
@@ -167,7 +167,34 @@ mca.plot <- plot(mca, invisible = "ind", graph.type =  "ggplot",
   theme_get()
 mca.plot
 
-ggsave("mca.dim1dim2.png", path = "./plots/", dpi = 1200)
+dim1.plot <- plot(mca, invisible = "ind", graph.type = "ggplot",
+                  axes=c(1,1),
+          col.var=c('#1B9E77', '#1B9E77',
+                    '#D95F02', '#D95F02',
+                    '#7570B3', '#7570B3',
+                    '#E7298A', '#E7298A',
+                    '#E6AB02', '#E6AB02',
+                    '#66A61E', '#66A61E', '#66A61E')) +
+        labs(title="MCA dimension 1") +
+  theme_get()
+dim1.plot
+
+dim2.plot <- plot(mca, invisible = "ind", graph.type = "ggplot",
+                  axes=c(2,2),
+          col.var=c('#1B9E77', '#1B9E77',
+                    '#D95F02', '#D95F02',
+                    '#7570B3', '#7570B3',
+                    '#E7298A', '#E7298A',
+                    '#E6AB02', '#E6AB02',
+                    '#66A61E', '#66A61E', '#66A61E')) +
+        labs(title="MCA dimension 2") +
+      theme_get()
+dim2.plot
+# ggsave("mca.dim1dim2.png", path = "./plots/", dpi = 1200)
+
+dim1.elipses <- plotellipses(mca, axes=c(1,1))
+dim2.elipses <- plotellipses(mca, axes=c(2,2))
+
 
 ## Author and Attraction
                                         # Stats
@@ -181,8 +208,8 @@ b <- p + facet_wrap(.~author)+
   labs(title = "Frequency counts of Attraction divided by author")
 b
 
-ggsave("author.attr.png", path = "./plots/",
-       height = 10, width = 10, units = "cm", dpi = 1200)
+# ggsave("author.attr.png", path = "./plots/",
+       # height = 10, width = 10, units = "cm", dpi = 1200)
 
 
 ## Possibility Construction
@@ -202,8 +229,8 @@ b <- p +
   labs(title = "Frequency counts of Attraction by Type of Construction")
 b
 
-ggsave("poss.attr.png", path = "./plots/", dpi = 1000,
-       height = 12, width = 14, units = "cm")
+# ggsave("poss.attr.png", path = "./plots/", dpi = 1000,
+       # height = 12, width = 14, units = "cm")
 
 
 ## Pressuposition and Attraction
@@ -222,5 +249,6 @@ b <- p +
   labs(title = "Frequency counts of Attraction by Pressupostion")
 b
 
-ggsave("press.attr.png", path = "./plots/", dpi = 1000,
-       height = 12, width = 14, units = "cm")
+# ggsave("press.attr.png", path = "./plots/", dpi = 1000,
+       # height = 12, width = 14, units = "cm")
+
